@@ -8,10 +8,14 @@ from telegram.ext import (
     CallbackContext,
 )
 import bo_search as bo
+import sys
 
-tFile = open('./tBot.token', 'r')
-c_token = tFile.read()
-tFile.close()
+if len(sys.argv) > 1:
+    c_token = sys.argv[1]
+else:
+    tFile = open('./tBot.token', 'r')
+    c_token = tFile.read()
+    tFile.close()
 
 def start(update: Update, context: CallbackContext):
     update.message.reply_text('Напиши наименование организации')
