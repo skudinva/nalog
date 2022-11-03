@@ -38,7 +38,10 @@ def parse_result (name):
             return result
         result.append(page_result)
 
-if __name__ == '__main__':
+def main():
     s_name = input('Введите наименование: ')
     print(parse_result(s_name))
+
+if __name__ == '__main__':
+    main()
 
