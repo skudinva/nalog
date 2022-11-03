@@ -28,16 +28,17 @@ def parse_one_page(search_result):
     return result
 
 def parse_result (name):
-    s_page = -1
+    n_page = -1
     result = []
     while True:
-        s_page = s_page + 1
-        js = run_search(s_name, s_page)
+        n_page = n_page + 1
+        js = run_search(name, n_page)
         page_result = parse_one_page(js)
         if not page_result:
             return result
         result.append(page_result)
 
-s_name = input('Введите наименование: ')
-print(parse_result(s_name))
+if __name__ == '__main__':
+    s_name = input('Введите наименование: ')
+    print(parse_result(s_name))
 
